@@ -13,7 +13,7 @@
 
 ## 🚀 라이브 데모
 
-**게임 플레이**: [https://zsbjrmox.manus.space](https://zsbjrmox.manus.space)
+
 
 ## 📋 에피소드 구성
 
