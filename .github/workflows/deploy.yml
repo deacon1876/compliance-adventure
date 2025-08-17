@@ -1,4 +1,5 @@
 name: Deploy to GitHub Pages
+
 on:
   push:
     branches: [ main ]
@@ -14,20 +15,29 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: pnpm/action-setup@v2   # install pnpm
+
+      # Setup pnpm
+      - uses: pnpm/action-setup@v2
         with:
           version: 9
+
+      # Setup Node.js with pnpm caching
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
           cache: 'pnpm'
+
+      # Install and build
       - run: pnpm install
       - run: pnpm run build
+
+      # Fallback for single-page apps
       - run: cp dist/index.html dist/404.html
+
+      # Upload build output
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
-
 
   deploy:
     needs: build
