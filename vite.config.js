@@ -5,11 +5,12 @@ import path from 'path'
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react(),tailwindcss()],
+  plugins: [react(), tailwindcss()],
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
     },
   },
-  base: process.env.NODE_ENV === 'production' ? '/compliance-simulator/' : '/',
+  // GitHub Pages: must match your repo name exactly
+  base: '/compliance-adventure/',
 })
