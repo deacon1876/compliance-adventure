@@ -194,19 +194,19 @@ export const gameScenarios = {
         color: "purple"
       },
       {
-        text: "에피소드 4: 선물 및 접대 정책",
+        text: "에피소드 3: 선물 및 접대 정책",
         nextScenario: "chapter4_situation",
         points: 0,
         color: "green"
       },
       {
-        text: "에피소드 5: 직장 내 괴롭힘 대응",
+        text: "에피소드 4: 직장 내 괴롭힘 대응",
         nextScenario: "episode1_situation",
         points: 0,
         color: "orange"
       },
       {
-        text: "에피소드 6: 담합 및 부정청탁 방지",
+        text: "에피소드 5: 담합 및 부정청탁 방지",
         nextScenario: "episode2_situation",
         points: 0,
         color: "pink"
@@ -310,19 +310,19 @@ export const gameScenarios = {
         color: "green"
       },
       {
-        text: "에피소드 4: 선물 및 접대 정책",
+        text: "에피소드 3: 선물 및 접대 정책",
         nextScenario: "chapter4_situation",
         points: 0,
         color: "orange"
       },
       {
-        text: "에피소드 5: 직장 내 괴롭힘 대응",
+        text: "에피소드 4: 직장 내 괴롭힘 대응",
         nextScenario: "episode1_situation",
         points: 0,
         color: "pink"
       },
       {
-        text: "에피소드 6: 담합 및 부정청탁 방지",
+        text: "에피소드 5: 담합 및 부정청탁 방지",
         nextScenario: "episode2_situation",
         points: 0,
         color: "teal"
@@ -336,10 +336,10 @@ export const gameScenarios = {
     ]
   },
 
-  // 에피소드 4: 선물 및 접대 정책
+  // 에피소드 3: 선물 및 접대 정책
   chapter4_situation: {
     id: "chapter4_situation",
-    title: "에피소드 4: 선물 및 접대 정책",
+    title: "에피소드 3: 선물 및 접대 정책",
     background: backgrounds.restaurant,
     character: characters.client,
     text: "프로젝트가 성공적으로 마무리된 후, 고객사에서 감사의 표시로 고급 레스토랑에서 식사를 대접하겠다고 합니다.\n\n\"김컴플 프로님, 이번 프로젝트 정말 만족스러웠습니다. 작은 감사의 표시로 저희가 단골로 다니는 고급 레스토랑에서 식사 한번 하시죠. 가족분들도 함께 모시고 싶습니다.\"\n\n회사의 선물 및 접대 정책을 고려해야 하는 상황입니다.",
@@ -438,13 +438,13 @@ export const gameScenarios = {
         color: "teal"
       },
       {
-        text: "에피소드 5: 직장 내 괴롭힘 대응",
+        text: "에피소드 4: 직장 내 괴롭힘 대응",
         nextScenario: "episode1_situation",
         points: 0,
         color: "blue"
       },
       {
-        text: "에피소드 6: 담합 및 부정청탁 방지",
+        text: "에피소드 5: 담합 및 부정청탁 방지",
         nextScenario: "episode2_situation",
         points: 0,
         color: "pink"
@@ -458,10 +458,10 @@ export const gameScenarios = {
     ]
   },
 
-  // 에피소드 5: 직장 내 괴롭힘
+  // 에피소드 4: 직장 내 괴롭힘
   episode1_situation: {
     id: "episode1_situation",
-    title: "에피소드 5: 직장 내 괴롭힘",
+    title: "에피소드 4: 직장 내 괴롭힘",
     background: backgrounds.conferenceRoom,
     character: characters.manager,
     text: "프로젝트 리뷰 회의 중입니다. 박 그룹장이 신입사원 김신입에게 반복적으로 욕설을 하며 인격 모독을 하고 있습니다.\n\n\"김신입! 이것도 못해? 정말 쓸모없네. 이런 식으로 일할 거면 회사 그만둬!\" \n\n다른 팀원들도 불편해하지만 아무도 말하지 않습니다. 당신은 어떻게 하시겠습니까?",
@@ -560,13 +560,13 @@ export const gameScenarios = {
         color: "blue"
       },
       {
-        text: "에피소드 4: 선물 및 접대 정책",
+        text: "에피소드 3: 선물 및 접대 정책",
         nextScenario: "chapter4_situation",
         points: 0,
         color: "purple"
       },
       {
-        text: "에피소드 6: 담합 및 부정청탁 방지",
+        text: "에피소드 5: 담합 및 부정청탁 방지",
         nextScenario: "episode2_situation",
         points: 0,
         color: "green"
@@ -580,10 +580,10 @@ export const gameScenarios = {
     ]
   },
 
-  // 에피소드 6: 담합
+  // 에피소드 5: 담합
   episode2_situation: {
     id: "episode2_situation",
-    title: "에피소드 6: 담합과 부정청탁",
+    title: "에피소드 5: 담합과 부정청탁",
     background: backgrounds.restaurant,
     character: characters.supplier,
     text: "협력업체 정대표와 식사 자리에서 만났습니다. 대화 중 정대표가 조심스럽게 제안합니다.\n\n\"김태헌 프로님, 다음 분기 입찰 자료를 미리 알려주시면... 저희가 고가 콘서트 티켓을 준비했는데 어떠세요? 가족분들과 함께 즐기실 수 있을 거예요.\"\n\n명백한 담합 제안입니다.",
@@ -682,13 +682,13 @@ export const gameScenarios = {
         color: "green"
       },
       {
-        text: "에피소드 4: 선물 및 접대 정책",
+        text: "에피소드 3: 선물 및 접대 정책",
         nextScenario: "chapter4_situation",
         points: 0,
         color: "teal"
       },
       {
-        text: "에피소드 5: 직장 내 괴롭힘 대응",
+        text: "에피소드 4: 직장 내 괴롭힘 대응",
         nextScenario: "episode1_situation",
         points: 0,
         color: "orange"
