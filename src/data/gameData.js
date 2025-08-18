@@ -170,38 +170,9 @@ export const gameScenarios = {
     character: characters.main,
     text: "계약 협상이 마무리되었습니다. 합리적인 협상과 원칙적인 대응이 중요합니다.",
     choices: [
-      {
-        text: "에피소드 2: 업체 선정 과정",
-        nextScenario: "chapter2_situation",
-        points: 0,
-        color: "blue"
       },
       {
-        text: "에피소드 3: 정보 보안 관리",
-        nextScenario: "chapter3_situation",
-        points: 0,
-        color: "purple"
-      },
-      {
-        text: "에피소드 3: 선물 및 접대 정책",
-        nextScenario: "chapter4_situation",
-        points: 0,
-        color: "green"
-      },
-      {
-        text: "에피소드 4: 직장 내 괴롭힘 대응",
-        nextScenario: "episode1_situation",
-        points: 0,
-        color: "orange"
-      },
-      {
-        text: "에피소드 5: 담합 및 부정청탁 방지",
-        nextScenario: "episode2_situation",
-        points: 0,
-        color: "pink"
-      },
-      {
-        text: "처음 메뉴 가기 및 총점 계산(누적 점수 RESET)",
+        text: "처음 메뉴 가기 및 에피소드 점수 계산",
         nextScenario: "final_score",
         points: 0,
         color: "gray"
@@ -291,33 +262,10 @@ export const gameScenarios = {
     background: backgrounds.office,
     character: characters.main,
     text: "업체 선정 과정이 완료되었습니다. 공정하고 투명한 절차가 중요합니다.",
-    choices: [
-      {
-        text: "에피소드 1: 계약 검토 및 협상",
-        nextScenario: "chapter1_situation",
-        points: 0,
-        color: "green"
+    choices:     choices: [
       },
       {
-        text: "에피소드 3: 선물 및 접대 정책",
-        nextScenario: "chapter4_situation",
-        points: 0,
-        color: "orange"
-      },
-      {
-        text: "에피소드 4: 직장 내 괴롭힘 대응",
-        nextScenario: "episode1_situation",
-        points: 0,
-        color: "pink"
-      },
-      {
-        text: "에피소드 5: 담합 및 부정청탁 방지",
-        nextScenario: "episode2_situation",
-        points: 0,
-        color: "teal"
-      },
-      {
-        text: "처음 메뉴 가기 및 총점 계산(누적 점수 RESET)",
+        text: "처음 메뉴 가기 및 에피소드 점수 계산",
         nextScenario: "final_score",
         points: 0,
         color: "gray"
@@ -407,39 +355,10 @@ export const gameScenarios = {
     background: backgrounds.office,
     character: characters.main,
     text: "선물 및 접대 관련 상황이 마무리되었습니다. 명확한 원칙과 정책 준수가 중요합니다.",
-    choices: [
-      {
-        text: "에피소드 1: 계약 검토 및 협상",
-        nextScenario: "chapter1_situation",
-        points: 0,
-        color: "purple"
+    choices:     choices: [
       },
       {
-        text: "에피소드 2: 업체 선정 과정",
-        nextScenario: "chapter2_situation",
-        points: 0,
-        color: "green"
-      },
-      {
-        text: "에피소드 3: 정보 보안 관리",
-        nextScenario: "chapter3_situation",
-        points: 0,
-        color: "teal"
-      },
-      {
-        text: "에피소드 4: 직장 내 괴롭힘 대응",
-        nextScenario: "episode1_situation",
-        points: 0,
-        color: "blue"
-      },
-      {
-        text: "에피소드 5: 담합 및 부정청탁 방지",
-        nextScenario: "episode2_situation",
-        points: 0,
-        color: "pink"
-      },
-      {
-        text: "처음 메뉴 가기 및 총점 계산(누적 점수 RESET)",
+        text: "처음 메뉴 가기 및 에피소드 점수 계산",
         nextScenario: "final_score",
         points: 0,
         color: "gray"
@@ -529,39 +448,10 @@ export const gameScenarios = {
     background: backgrounds.office,
     character: characters.main,
     text: "직장 내 괴롭힘 상황이 해결되었습니다. 즉각적이고 공개적인 대응이 중요합니다.",
-    choices: [
-      {
-        text: "에피소드 1: 계약 검토 및 협상",
-        nextScenario: "chapter1_situation",
-        points: 0,
-        color: "orange"
+    choices:     choices: [
       },
       {
-        text: "에피소드 2: 업체 선정 과정",
-        nextScenario: "chapter2_situation",
-        points: 0,
-        color: "teal"
-      },
-      {
-        text: "에피소드 3: 정보 보안 관리",
-        nextScenario: "chapter3_situation",
-        points: 0,
-        color: "blue"
-      },
-      {
-        text: "에피소드 3: 선물 및 접대 정책",
-        nextScenario: "chapter4_situation",
-        points: 0,
-        color: "purple"
-      },
-      {
-        text: "에피소드 5: 담합 및 부정청탁 방지",
-        nextScenario: "episode2_situation",
-        points: 0,
-        color: "green"
-      },
-      {
-        text: "처음 메뉴 가기 및 총점 계산(누적 점수 RESET)",
+        text: "처음 메뉴 가기 및 에피소드 점수 계산",
         nextScenario: "final_score",
         points: 0,
         color: "gray"
@@ -651,39 +541,10 @@ export const gameScenarios = {
     background: backgrounds.office,
     character: characters.main,
     text: "담합 및 부정청탁 상황이 해결되었습니다. 초기 거절과 공식 절차 대응이 중요합니다.",
-    choices: [
-      {
-        text: "에피소드 1: 계약 검토 및 협상",
-        nextScenario: "chapter1_situation",
-        points: 0,
-        color: "pink"
+    choices:     choices: [
       },
       {
-        text: "에피소드 2: 업체 선정 과정",
-        nextScenario: "chapter2_situation",
-        points: 0,
-        color: "purple"
-      },
-      {
-        text: "에피소드 3: 정보 보안 관리",
-        nextScenario: "chapter3_situation",
-        points: 0,
-        color: "green"
-      },
-      {
-        text: "에피소드 3: 선물 및 접대 정책",
-        nextScenario: "chapter4_situation",
-        points: 0,
-        color: "teal"
-      },
-      {
-        text: "에피소드 4: 직장 내 괴롭힘 대응",
-        nextScenario: "episode1_situation",
-        points: 0,
-        color: "orange"
-      },
-      {
-        text: "처음 메뉴 가기 및 총점 계산(누적 점수 RESET)",
+        text: "처음 메뉴 가기 및 에피소드 점수 계산",
         nextScenario: "final_score",
         points: 0,
         color: "gray"
@@ -732,12 +593,10 @@ export const getScenario = (scenarioId) => {
 };
 
 export const calculateFinalScore = (totalPoints) => {
-  if (totalPoints >= 18) return { grade: 'A+', message: '완벽한 컴플라이언스 전문가!' };
-  if (totalPoints >= 15) return { grade: 'A', message: '우수한 컴플라이언스 역량!' };
-  if (totalPoints >= 12) return { grade: 'B+', message: '양호한 컴플라이언스 이해!' };
-  if (totalPoints >= 9) return { grade: 'B', message: '기본적인 컴플라이언스 지식!' };
-  if (totalPoints >= 6) return { grade: 'C+', message: '추가 학습이 필요합니다.' };
-  if (totalPoints >= 3) return { grade: 'C', message: '컴플라이언스 교육을 받으세요.' };
+  if (totalPoints >= 8) return { grade: 'A!', message: '우수한 컴플라이언스 역량!' };
+  if (totalPoints >= 7) return { grade: 'B+', message: '양호한 컴플라이언스 이해!' };
+  if (totalPoints >= 6) return { grade: 'B', message: '기본적인 컴플라이언스 지식!' };
+  if (totalPoints >= 3) return { grade: 'C', message: '컴플라이언스 교육을 조금 더 받으세요.' };
   return { grade: 'D', message: '즉시 컴플라이언스 교육이 필요합니다!' };
 };
 
