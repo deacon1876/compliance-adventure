@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Progress } from '@/components/ui/progress';
-import { getScenario, calculateFinalScore } from '../data/gameData';
+import { getScenario } from '../data/gameData';
 
 const GameScreen = () => {
   const [currentScenario, setCurrentScenario] = useState('intro');
@@ -12,7 +12,6 @@ const GameScreen = () => {
   const [showFeedback, setShowFeedback] = useState(false);
   const [currentFeedback, setCurrentFeedback] = useState(null);
   const [questionScores, setQuestionScores] = useState(new Map()); // 각 문제별 최고 점수 추적
-  const [currentEpisode, setCurrentEpisode] = useState('');
   const [questionCounter, setQuestionCounter] = useState(new Map()); // 에피소드별 문제 번호 추적
   const [shuffledChoices, setShuffledChoices] = useState([]); // 섞인 선택지 저장
 
@@ -28,6 +27,25 @@ const GameScreen = () => {
     if (scenarioId.includes('episode2')) return '에피소드 6: 담합 및 부정청탁 방지';
     if (scenarioId.includes('episode3')) return '에피소드 7: 사이버 보안 및 피싱 대응';
     return '';
+  };
+
+  // 에피소드 종료 정보 매핑
+  const getEpisodeEndInfo = (scenarioId) => {
+    const episodeEndMapping = {
+      'episode1_end': { prefix: 'episode1_', name: '직장 내 괴롭힘 대응' },
+      'episode2_end': { prefix: 'episode2_', name: '담합 및 부정청탁 방지' },
+      'chapter1_end': { prefix: 'chapter1_', name: '계약 검토 및 협상' },
+      'chapter2_end': { prefix: 'chapter2_', name: '업체 선정 과정' },
+      'chapter4_end': { prefix: 'chapter4_', name: '선물 및 접대 정책' }
+    };
+    return episodeEndMapping[scenarioId] || null;
+  };
+
+  // 에피소드별 점수 계산
+  const calculateEpisodeScore = (episodePrefix) => {
+    return gameHistory
+      .filter(entry => entry.scenario.startsWith(episodePrefix))
+      .reduce((total, entry) => total + entry.points, 0);
   };
 
   // 문제 번호 추적
@@ -409,10 +427,69 @@ const GameScreen = () => {
     );
   };
 
+  // 에피소드 종료 화면 렌더링
+  const renderEpisodeEnd = (episodeInfo) => {
+    const episodeScore = calculateEpisodeScore(episodeInfo.prefix);
+    
+    return (
+      <div className="space-y-6">
+        {/* 에피소드 점수 카드 */}
+        <div className="bg-blue-50 rounded-lg p-6 border-2 border-blue-200 text-center">
+          <h3 className="text-2xl font-bold text-blue-800 mb-4">
+            🎉 {episodeInfo.name} 완료!
+          </h3>
+          <div className="text-4xl font-bold text-blue-600 mb-2">
+            {episodeScore}점
+          </div>
+          <div className="text-sm text-blue-700">
+            이번 에피소드에서 획득한 점수
+          </div>
+        </div>
+
+        {/* 메인 메뉴 버튼 */}
+        <Button 
+          onClick={() => setCurrentScenario('intro')} 
+          className="w-full bg-green-600 hover:bg-green-700 text-white py-4 text-lg font-semibold"
+        >
+          🏠 메인 메뉴로 돌아가기
+        </Button>
+
+        {/* 기존 선택지들도 표시 */}
+        <div className="border-t pt-4">
+          <p className="text-center text-gray-600 mb-4 font-medium">
+            다른 에피소드를 계속 플레이하시겠습니까?
+          </p>
+          <div className="grid gap-3">
+            {choicesToRender.map((choice, index) => (
+              <Button
+                key={index}
+                onClick={() => handleChoice(choice)}
+                variant="outline"
+                className={`w-full p-4 h-auto text-left justify-start text-wrap border-2 transition-all duration-200 hover:scale-[1.02] hover:shadow-lg ${getColorClasses(choice.color)}`}
+              >
+                <div className="flex items-start gap-3">
+                  <div className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center text-white font-bold text-sm ${getButtonColor(choice.color)}`}>
+                    {index + 1}
+                  </div>
+                  <span className="text-sm md:text-base text-gray-800 leading-relaxed">
+                    {choice.text}
+                  </span>
+                </div>
+              </Button>
+            ))}
+          </div>
+        </div>
+      </div>
+    );
+  };
+
   // final_score 시나리오인 경우 결과 화면 표시
   if (currentScenario === 'final_score') {
     return renderResults();
   }
+
+  // 에피소드 종료 시나리오인 경우 에피소드 점수 화면 표시
+  const episodeEndInfo = getEpisodeEndInfo(currentScenario);
 
   // 현재 사용할 선택지 결정
   const choicesToRender = shuffledChoices.length > 0 ? shuffledChoices : (scenario.choices || []);
@@ -523,8 +600,11 @@ const GameScreen = () => {
                       </Button>
                     ))}
                   </div>
+                ) : episodeEndInfo ? (
+                  // 에피소드 종료 화면 - 점수 표시 및 메인 메뉴 버튼
+                  renderEpisodeEnd(episodeEndInfo)
                 ) : scenario.id.includes('_end') ? (
-                  // 에피소드 끝 선택지 - 색깔 적용
+                  // 다른 에피소드 끝 선택지 - 색깔 적용
                   <div className="grid gap-3">
                     {choicesToRender.map((choice, index) => (
                       <Button
