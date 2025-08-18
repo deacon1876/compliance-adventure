@@ -5,9 +5,7 @@ import characterMain from '../assets/character-main.png';
 import characterManager from '../assets/character-manager.png';
 import characterColleague from '../assets/character-colleague.png';
 import characterClient from '../assets/character-client.png';
-import characterHR from '../assets/character-hr.png';
 import characterSupplier from '../assets/character-supplier.png';
-import characterIT from '../assets/character-it.png';
 import officeMeetingRoom from '../assets/office-meeting-room.png';
 import officeWorkspace from '../assets/office-workspace.png';
 import restaurantBusiness from '../assets/restaurant-business.png';
@@ -17,7 +15,7 @@ import computerScreen from '../assets/computer-screen.png';
 
 export const characters = {
   main: {
-    name: "김컴플 프로",
+    name: "정직한 프로",
     role: "프로젝트 매니저",
     image: characterMain
   },
@@ -35,21 +33,12 @@ export const characters = {
     name: "한실장",
     role: "고객사 담당자",
     image: characterClient
-  },
-  hr: {
-    name: "최과장",
-    role: "인사팀 과장",
-    image: characterHR
+
   },
   supplier: {
     name: "정대표",
     role: "협력업체 대표",
     image: characterSupplier
-  },
-  it: {
-    name: "김대리",
-    role: "정보보호센터",
-    image: characterIT
   }
 };
 
@@ -104,12 +93,12 @@ export const gameScenarios = {
     title: "에피소드 1: 계약 검토 및 협상",
     background: backgrounds.meetingRoom,
     character: characters.client,
-    text: "대형 프로젝트 계약 협상이 진행 중입니다. 고객사 한실장이 예상보다 훨씬 까다로운 요구사항들을 제시합니다.\n\n\"김컴플 프로님, 기존 계약서보다 30% 더 많은 기능을 추가하고, 납기는 그대로 유지하되 품질 보증 기간을 2년으로 연장해주세요. 지연 시 일일 지연료도 지불해주시고요.\"\n\n이는 명백히 불합리한 조건입니다. 어떻게 대응하시겠습니까?",
+    text: "대형 프로젝트 계약 협상이 진행 중입니다. 고객사 한실장이 예상보다 훨씬 까다로운 요구사항들을 제시합니다.\n\n\"정직한 프로님, 기존 계약서보다 30% 더 많은 기능을 추가하고, 납기는 그대로 유지하되 품질 보증 기간을 2년으로 연장해주세요. 지연 시 일일 지연료도 지불해주시고요.\"\n\n이는 명백히 불합리한 조건입니다. 어떻게 대응하시겠습니까?",
     choices: [
       {
         text: "네, 고객사 요구사항을 모두 수용하겠습니다.",
         nextScenario: "chapter1_situation2",
-        points: -2
+        points: -1
       },
       {
         text: "중요한 요구사항들이네요. 저희 내부에서 검토한 후 내일까지 답변드리겠습니다.",
@@ -129,12 +118,12 @@ export const gameScenarios = {
     title: "계약 조건 재검토",
     background: backgrounds.office,
     character: characters.manager,
-    text: "박 그룹장이 계약 조건에 대해 조언합니다.\n\n\"태헌아, 고객사 요구사항이 까다롭긴 하지만 이 프로젝트를 따내면 우리 팀 실적이 크게 올라갈 거야. 좀 무리해서라도 수주하는 게 어떨까? 나중에 변경 계약으로 조정하면 되잖아.\"\n\n상사의 압박과 원칙 사이에서 어떻게 하시겠습니까?",
+    text: "박 그룹장이 계약 조건에 대해 조언합니다.\n\n\"정직한 프로, 고객사 요구사항이 까다롭긴 하지만 이 프로젝트를 따내면 우리 팀 실적이 크게 올라갈 거야. 좀 무리해서라도 수주하는 게 어떨까? 나중에 변경 계약으로 조정하면 되잖아.\"\n\n상사의 압박과 원칙 사이에서 어떻게 하시겠습니까?",
     choices: [
       {
         text: "네, 그룹장님 말씀대로 일단 수주부터 하겠습니다.",
         nextScenario: "chapter1_situation3",
-        points: -2
+        points: -1
       },
       {
         text: "리스크가 너무 큽니다. 조건을 재협상해야 합니다.",
@@ -212,7 +201,7 @@ export const gameScenarios = {
         color: "pink"
       },
       {
-        text: "게임 종료 및 총점 계산",
+        text: "처음 메뉴 가기 및 총점 계산(누적 점수 RESET)",
         nextScenario: "final_score",
         points: 0,
         color: "gray"
@@ -226,12 +215,12 @@ export const gameScenarios = {
     title: "에피소드 2: 업체 선정 과정",
     background: backgrounds.office,
     character: characters.supplier,
-    text: "새로운 협력업체 선정 과정에서 한 업체 대표가 개인적으로 접근해왔습니다.\n\n\"김태헌 프로님, 저희가 이번 프로젝트에 꼭 참여하고 싶습니다. 공정한 경쟁이겠지만... 혹시 어떤 부분을 중점적으로 준비하면 좋을지 조언해주실 수 있나요?\"\n\n이는 공정한 입찰 과정에 영향을 줄 수 있는 상황입니다.",
+    text: "새로운 협력업체 선정 과정에서 한 업체 대표가 개인적으로 접근해왔습니다.\n\n\"정직한 프로님, 저희가 이번 프로젝트에 꼭 참여하고 싶습니다. 공정한 경쟁이겠지만... 혹시 어떤 부분을 중점적으로 준비하면 좋을지 조언해주실 수 있나요?\"\n\n이는 공정한 입찰 과정에 영향을 줄 수 있는 상황입니다.",
     choices: [
       {
         text: "음... 기술적 역량을 좀 더 강조하시면 좋을 것 같아요.",
         nextScenario: "chapter2_situation2",
-        points: -2
+        points: -1
       },
       {
         text: "죄송하지만 입찰 과정의 공정성을 위해 구체적인 조언은 드릴 수 없습니다.",
@@ -256,7 +245,7 @@ export const gameScenarios = {
       {
         text: "그룹장님 말씀이 맞습니다. 신뢰할 수 있는 업체가 좋겠네요.",
         nextScenario: "chapter2_situation3",
-        points: -2
+        points: -1
       },
       {
         text: "평가 기준에 따라 객관적으로 판단해야 할 것 같습니다.",
@@ -276,7 +265,7 @@ export const gameScenarios = {
     title: "최종 업체 선정",
     background: backgrounds.office,
     character: characters.colleague,
-    text: "이로운 프로가 조용히 다가와서 말합니다.\n\n\"태헌아, 들리는 얘기로는 A업체 대표가 그룹장님과 개인적으로 친한 사이래. 그래서 그룹장님이 A업체를 밀고 있는 것 같아. 어떻게 생각해?\"\n\n이런 정보를 알게 된 상황에서 어떻게 하시겠습니까?",
+    text: "이로운 프로가 조용히 다가와서 말합니다.\n\n\"정직한 프로, 들리는 얘기로는 A업체 대표가 그룹장님과 개인적으로 친한 사이래. 그래서 그룹장님이 A업체를 밀고 있는 것 같아. 어떻게 생각해?\"\n\n이런 정보를 알게 된 상황에서 어떻게 하시겠습니까?",
     choices: [
       {
         text: "그런 개인적 관계는 업무와 별개입니다.",
@@ -291,7 +280,7 @@ export const gameScenarios = {
       {
         text: "일단 조용히 넘어가는 게 좋겠어요.",
         nextScenario: "chapter2_end",
-        points: -2
+        points: -1
       }
     ]
   },
@@ -328,7 +317,7 @@ export const gameScenarios = {
         color: "teal"
       },
       {
-        text: "게임 종료 및 총점 계산",
+        text: "처음 메뉴 가기 및 총점 계산(누적 점수 RESET)",
         nextScenario: "final_score",
         points: 0,
         color: "gray"
@@ -342,7 +331,7 @@ export const gameScenarios = {
     title: "에피소드 3: 선물 및 접대 정책",
     background: backgrounds.restaurant,
     character: characters.client,
-    text: "프로젝트가 성공적으로 마무리된 후, 고객사에서 감사의 표시로 고급 레스토랑에서 식사를 대접하겠다고 합니다.\n\n\"김컴플 프로님, 이번 프로젝트 정말 만족스러웠습니다. 작은 감사의 표시로 저희가 단골로 다니는 고급 레스토랑에서 식사 한번 하시죠. 가족분들도 함께 모시고 싶습니다.\"\n\n회사의 선물 및 접대 정책을 고려해야 하는 상황입니다.",
+    text: "프로젝트가 성공적으로 마무리된 후, 고객사에서 감사의 표시로 고급 레스토랑에서 식사를 대접하겠다고 합니다.\n\n\"정직한 프로님, 이번 프로젝트 정말 만족스러웠습니다. 작은 감사의 표시로 저희가 단골로 다니는 고급 레스토랑에서 식사 한번 하시죠. 가족분들도 함께 모시고 싶습니다.\"\n\n회사의 선물 및 접대 정책을 고려해야 하는 상황입니다.",
     choices: [
       {
         text: "단호한 거절: 회사 정책상 정중히 사양하겠습니다.",
@@ -357,7 +346,7 @@ export const gameScenarios = {
       {
         text: "감사합니다. 기꺼이 참석하겠습니다.",
         nextScenario: "chapter4_situation2",
-        points: -2
+        points: -1
       }
     ]
   },
@@ -382,7 +371,7 @@ export const gameScenarios = {
       {
         text: "그렇게 정성스럽게 준비해주셨다면 받겠습니다.",
         nextScenario: "chapter4_situation3",
-        points: -3
+        points: -2
       }
     ]
   },
@@ -392,7 +381,7 @@ export const gameScenarios = {
     title: "동료의 조언",
     background: backgrounds.hallway,
     character: characters.colleague,
-    text: "이로운 프로가 복도에서 조용히 말합니다.\n\n\"태헌아, 너무 원칙적으로 굴면 고객사와 관계가 나빠질 수도 있어. 다른 회사들은 다 받는다던데... 우리만 너무 까다롭게 구는 거 아닐까?\"\n\n동료의 조언에 어떻게 반응하시겠습니까?",
+    text: "이로운 프로가 복도에서 조용히 말합니다.\n\n\"정직한 프로, 너무 원칙적으로 굴면 고객사와 관계가 나빠질 수도 있어. 다른 회사들은 다 받는다던데... 우리만 너무 까다롭게 구는 거 아닐까?\"\n\n동료의 조언에 어떻게 반응하시겠습니까?",
     choices: [
       {
         text: "그래도 원칙은 지켜야죠. 장기적으로 더 좋을 거예요.",
@@ -407,7 +396,7 @@ export const gameScenarios = {
       {
         text: "맞는 말이에요. 너무 융통성 없게 굴었나 봐요.",
         nextScenario: "chapter4_end",
-        points: -2
+        points: -1
       }
     ]
   },
@@ -450,7 +439,7 @@ export const gameScenarios = {
         color: "pink"
       },
       {
-        text: "게임 종료 및 총점 계산",
+        text: "처음 메뉴 가기 및 총점 계산(누적 점수 RESET)",
         nextScenario: "final_score",
         points: 0,
         color: "gray"
@@ -469,7 +458,7 @@ export const gameScenarios = {
       {
         text: "웃어넘기거나 침묵한다.",
         nextScenario: "episode1_situation2",
-        points: -2
+        points: -1
       },
       {
         text: "회의 후 피해자에게만 조용히 이야기한다.",
@@ -499,12 +488,12 @@ export const gameScenarios = {
       {
         text: "아무 말도 하지 않는다.",
         nextScenario: "episode1_situation3",
-        points: -2
+        points: -1
       },
       {
         text: "대신 일을 처리해준다.",
         nextScenario: "episode1_situation3",
-        points: -1
+        points: 0
       }
     ]
   },
@@ -524,12 +513,12 @@ export const gameScenarios = {
       {
         text: "무시한다.",
         nextScenario: "episode1_end",
-        points: -2
+        points: -1
       },
       {
         text: "농담조로만 언급한다.",
         nextScenario: "episode1_end",
-        points: -1
+        points: 0
       }
     ]
   },
@@ -572,7 +561,7 @@ export const gameScenarios = {
         color: "green"
       },
       {
-        text: "게임 종료 및 총점 계산",
+        text: "처음 메뉴 가기 및 총점 계산(누적 점수 RESET)",
         nextScenario: "final_score",
         points: 0,
         color: "gray"
@@ -586,7 +575,7 @@ export const gameScenarios = {
     title: "에피소드 5: 담합과 부정청탁",
     background: backgrounds.restaurant,
     character: characters.supplier,
-    text: "협력업체 정대표와 식사 자리에서 만났습니다. 대화 중 정대표가 조심스럽게 제안합니다.\n\n\"김태헌 프로님, 다음 분기 입찰 자료를 미리 알려주시면... 저희가 고가 콘서트 티켓을 준비했는데 어떠세요? 가족분들과 함께 즐기실 수 있을 거예요.\"\n\n명백한 담합 제안입니다.",
+    text: "협력업체 정대표와 식사 자리에서 만났습니다. 대화 중 정대표가 조심스럽게 제안합니다.\n\n\"정직한 프로님, 다음 분기 입찰 자료를 미리 알려주시면... 저희가 고가 콘서트 티켓을 준비했는데 어떠세요? 가족분들과 함께 즐기실 수 있을 거예요.\"\n\n명백한 담합 제안입니다.",
     choices: [
       {
         text: "정중히 거절하고 공정 원칙을 재확인한다.",
@@ -596,12 +585,12 @@ export const gameScenarios = {
       {
         text: "농담처럼 받아들이고 티켓을 받는다.",
         nextScenario: "episode2_situation2",
-        points: -3
+        points: -2
       },
       {
         text: "생각해 보겠다고 한다.",
         nextScenario: "episode2_situation2",
-        points: -1
+        points: 0
       }
     ]
   },
@@ -611,7 +600,7 @@ export const gameScenarios = {
     title: "동료의 압박",
     background: backgrounds.office,
     character: characters.colleague,
-    text: "이로운 프로가 조용히 말합니다.\n\n\"태헌아, 다들 이 정도는 한다던데... 너무 원칙만 고집하면 우리만 손해 아닐까? 다른 팀들은 어떻게 하는지 알아?\"\n\n동료의 압박에 어떻게 대응하시겠습니까?",
+    text: "이로운 프로가 조용히 말합니다.\n\n\"정직한 프로, 다들 이 정도는 한다던데... 너무 원칙만 고집하면 우리만 손해 아닐까? 다른 팀들은 어떻게 하는지 알아?\"\n\n동료의 압박에 어떻게 대응하시겠습니까?",
     choices: [
       {
         text: "제안을 기록하고 절차에 따라 보고한다.",
@@ -621,12 +610,12 @@ export const gameScenarios = {
       {
         text: "그냥 넘어가고 공급업체와만 이야기한다.",
         nextScenario: "episode2_situation3",
-        points: -2
+        points: -1
       },
       {
         text: "비공식 경고만 준다.",
         nextScenario: "episode2_situation3",
-        points: -1
+        points: 0
       }
     ]
   },
@@ -636,7 +625,7 @@ export const gameScenarios = {
     title: "평판 공격",
     background: backgrounds.hallway,
     character: characters.supplier,
-    text: "며칠 후 정대표가 다른 직원들에게 \"김태헌 프로는 협조적이지 않다\"는 소문을 퍼뜨리고 있다는 소식을 듣습니다.\n\n복도에서 정대표와 마주쳤을 때 어떻게 대응하시겠습니까?",
+    text: "며칠 후 정대표가 다른 직원들에게 \"정직한 프로는 협조적이지 않다\"는 소문을 퍼뜨리고 있다는 소식을 듣습니다.\n\n복도에서 정대표와 마주쳤을 때 어떻게 대응하시겠습니까?",
     choices: [
       {
         text: "문서화 후 상부에 보고한다.",
@@ -646,12 +635,12 @@ export const gameScenarios = {
       {
         text: "무시한다.",
         nextScenario: "episode2_end",
-        points: -1
+        points: 0
       },
       {
         text: "공급업체에 직접 전화해 해명한다.",
         nextScenario: "episode2_end",
-        points: -2
+        points: -1
       }
     ]
   },
@@ -694,7 +683,7 @@ export const gameScenarios = {
         color: "orange"
       },
       {
-        text: "게임 종료 및 총점 계산",
+        text: "처음 메뉴 가기 및 총점 계산(누적 점수 RESET)",
         nextScenario: "final_score",
         points: 0,
         color: "gray"
