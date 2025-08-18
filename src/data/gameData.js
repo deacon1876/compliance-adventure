@@ -90,11 +90,7 @@ export const gameScenarios = {
         nextScenario: "episode1_situation",
         points: 0
       },
-      {
-        text: "에피소드 5: 담합 및 부정청탁 방지",
-        nextScenario: "episode2_situation",
-        points: 0
-      }
+  // 에피소드 5: 담합 및 부정청탁 방지 삭제됨
     ]
   },
 
@@ -182,37 +178,8 @@ export const gameScenarios = {
     text: "계약 협상이 마무리되었습니다. 합리적인 협상과 원칙적인 대응이 중요합니다.",
     choices: [
       {
-        text: "에피소드 2: 업체 선정 과정",
-        nextScenario: "chapter2_situation",
-        points: 0,
-        color: "blue"
-      },
-      {
-        text: "에피소드 3: 정보 보안 관리",
-        nextScenario: "chapter3_situation",
-        points: 0,
-        color: "purple"
-      },
-      {
-        text: "에피소드 4: 선물 및 접대 정책",
-        nextScenario: "chapter4_situation",
-        points: 0,
-        color: "green"
-      },
-      {
-        text: "에피소드 5: 직장 내 괴롭힘 대응",
-        nextScenario: "episode1_situation",
-        points: 0,
-        color: "orange"
-      },
-      {
-        text: "에피소드 6: 담합 및 부정청탁 방지",
-        nextScenario: "episode2_situation",
-        points: 0,
-        color: "pink"
-      },
-      {
-        text: "게임 종료 및 총점 계산",
+
+        text: "에피소드 종료 및 총점 계산",
         nextScenario: "final_score",
         points: 0,
         color: "gray"
@@ -304,31 +271,7 @@ export const gameScenarios = {
     text: "업체 선정 과정이 완료되었습니다. 공정하고 투명한 절차가 중요합니다.",
     choices: [
       {
-        text: "에피소드 1: 계약 검토 및 협상",
-        nextScenario: "chapter1_situation",
-        points: 0,
-        color: "green"
-      },
-      {
-        text: "에피소드 4: 선물 및 접대 정책",
-        nextScenario: "chapter4_situation",
-        points: 0,
-        color: "orange"
-      },
-      {
-        text: "에피소드 5: 직장 내 괴롭힘 대응",
-        nextScenario: "episode1_situation",
-        points: 0,
-        color: "pink"
-      },
-      {
-        text: "에피소드 6: 담합 및 부정청탁 방지",
-        nextScenario: "episode2_situation",
-        points: 0,
-        color: "teal"
-      },
-      {
-        text: "게임 종료 및 총점 계산",
+        text: "에피소드 종료 및 총점 계산",
         nextScenario: "final_score",
         points: 0,
         color: "gray"
@@ -420,37 +363,10 @@ export const gameScenarios = {
     text: "선물 및 접대 관련 상황이 마무리되었습니다. 명확한 원칙과 정책 준수가 중요합니다.",
     choices: [
       {
-        text: "에피소드 1: 계약 검토 및 협상",
-        nextScenario: "chapter1_situation",
-        points: 0,
-        color: "purple"
+    
       },
       {
-        text: "에피소드 2: 업체 선정 과정",
-        nextScenario: "chapter2_situation",
-        points: 0,
-        color: "green"
-      },
-      {
-        text: "에피소드 3: 정보 보안 관리",
-        nextScenario: "chapter3_situation",
-        points: 0,
-        color: "teal"
-      },
-      {
-        text: "에피소드 5: 직장 내 괴롭힘 대응",
-        nextScenario: "episode1_situation",
-        points: 0,
-        color: "blue"
-      },
-      {
-        text: "에피소드 6: 담합 및 부정청탁 방지",
-        nextScenario: "episode2_situation",
-        points: 0,
-        color: "pink"
-      },
-      {
-        text: "게임 종료 및 총점 계산",
+        text: "에피소드 종료 및 총점 계산",
         nextScenario: "final_score",
         points: 0,
         color: "gray"
@@ -542,165 +458,19 @@ export const gameScenarios = {
     text: "직장 내 괴롭힘 상황이 해결되었습니다. 즉각적이고 공개적인 대응이 중요합니다.",
     choices: [
       {
-        text: "에피소드 1: 계약 검토 및 협상",
-        nextScenario: "chapter1_situation",
-        points: 0,
-        color: "orange"
-      },
-      {
-        text: "에피소드 2: 업체 선정 과정",
-        nextScenario: "chapter2_situation",
-        points: 0,
-        color: "teal"
-      },
-      {
-        text: "에피소드 3: 정보 보안 관리",
-        nextScenario: "chapter3_situation",
-        points: 0,
-        color: "blue"
-      },
-      {
-        text: "에피소드 4: 선물 및 접대 정책",
-        nextScenario: "chapter4_situation",
-        points: 0,
-        color: "purple"
-      },
-      {
-        text: "에피소드 6: 담합 및 부정청탁 방지",
-        nextScenario: "episode2_situation",
-        points: 0,
-        color: "green"
-      },
-      {
-        text: "게임 종료 및 총점 계산",
-        nextScenario: "final_score",
-        points: 0,
-        color: "gray"
-      }
-    ]
-  },
-
-  // 에피소드 6: 담합
-  episode2_situation: {
-    id: "episode2_situation",
-    title: "에피소드 6: 담합과 부정청탁",
-    background: backgrounds.restaurant,
-    character: characters.supplier,
-    text: "협력업체 정대표와 식사 자리에서 만났습니다. 대화 중 정대표가 조심스럽게 제안합니다.\n\n\"김태헌 프로님, 다음 분기 입찰 자료를 미리 알려주시면... 저희가 고가 콘서트 티켓을 준비했는데 어떠세요? 가족분들과 함께 즐기실 수 있을 거예요.\"\n\n명백한 담합 제안입니다.",
-    choices: [
-      {
-        text: "정중히 거절하고 공정 원칙을 재확인한다.",
-        nextScenario: "episode2_situation2",
-        points: 3
-      },
-      {
-        text: "농담처럼 받아들이고 티켓을 받는다.",
-        nextScenario: "episode2_situation2",
-        points: -3
-      },
-      {
-        text: "생각해 보겠다고 한다.",
-        nextScenario: "episode2_situation2",
-        points: -1
-      }
-    ]
-  },
-
-  episode2_situation2: {
-    id: "episode2_situation2",
-    title: "동료의 압박",
-    background: backgrounds.office,
-    character: characters.colleague,
-    text: "이로운 프로가 조용히 말합니다.\n\n\"태헌아, 다들 이 정도는 한다던데... 너무 원칙만 고집하면 우리만 손해 아닐까? 다른 팀들은 어떻게 하는지 알아?\"\n\n동료의 압박에 어떻게 대응하시겠습니까?",
-    choices: [
-      {
-        text: "제안을 기록하고 절차에 따라 보고한다.",
-        nextScenario: "episode2_situation3",
-        points: 3
-      },
-      {
-        text: "그냥 넘어가고 공급업체와만 이야기한다.",
-        nextScenario: "episode2_situation3",
-        points: -2
-      },
-      {
-        text: "비공식 경고만 준다.",
-        nextScenario: "episode2_situation3",
-        points: -1
-      }
-    ]
-  },
-
-  episode2_situation3: {
-    id: "episode2_situation3",
-    title: "평판 공격",
-    background: backgrounds.hallway,
-    character: characters.supplier,
-    text: "며칠 후 정대표가 다른 직원들에게 \"김태헌 프로는 협조적이지 않다\"는 소문을 퍼뜨리고 있다는 소식을 듣습니다.\n\n복도에서 정대표와 마주쳤을 때 어떻게 대응하시겠습니까?",
-    choices: [
-      {
-        text: "문서화 후 상부에 보고한다.",
-        nextScenario: "episode2_end",
-        points: 3
-      },
-      {
-        text: "무시한다.",
-        nextScenario: "episode2_end",
-        points: -1
-      },
-      {
-        text: "공급업체에 직접 전화해 해명한다.",
-        nextScenario: "episode2_end",
-        points: -2
-      }
-    ]
-  },
-
-  episode2_end: {
-    id: "episode2_end",
-    title: "담합 방지 상황 완료",
-    background: backgrounds.office,
-    character: characters.main,
-    text: "담합 및 부정청탁 상황이 해결되었습니다. 초기 거절과 공식 절차 대응이 중요합니다.",
-    choices: [
-      {
-        text: "에피소드 1: 계약 검토 및 협상",
-        nextScenario: "chapter1_situation",
-        points: 0,
-        color: "pink"
-      },
-      {
-        text: "에피소드 2: 업체 선정 과정",
-        nextScenario: "chapter2_situation",
-        points: 0,
-        color: "purple"
-      },
-      {
-        text: "에피소드 3: 정보 보안 관리",
-        nextScenario: "chapter3_situation",
-        points: 0,
-        color: "green"
-      },
-      {
-        text: "에피소드 4: 선물 및 접대 정책",
-        nextScenario: "chapter4_situation",
-        points: 0,
-        color: "teal"
-      },
-      {
-        text: "에피소드 5: 직장 내 괴롭힘 대응",
+        text: "다시 시작하기",
         nextScenario: "episode1_situation",
         points: 0,
-        color: "orange"
       },
       {
-        text: "게임 종료 및 총점 계산",
+        text: "에피소드 종료 및 총점 계산",
         nextScenario: "final_score",
         points: 0,
         color: "gray"
       }
     ]
   },
+
 
   // 최종 점수 화면
   final_score: {

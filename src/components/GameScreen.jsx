@@ -6,6 +6,78 @@ import { Progress } from '@/components/ui/progress';
 import { getScenario, calculateFinalScore } from '../data/gameData';
 
 const GameScreen = () => {
+  // Show episode score summary when episode ends
+  const [showEpisodeScore, setShowEpisodeScore] = useState(false);
+  const [lastEpisodeScore, setLastEpisodeScore] = useState(null);
+
+  // Helper: check if scenario is an episode end
+  const isEpisodeEndScenario = (scenarioId) => scenarioId.endsWith('_end');
+
+  // Helper: get episode name from scenarioId
+  const getEpisodeNameFromScenario = (scenarioId) => {
+    if (scenarioId.includes('chapter1')) return '에피소드 1: 계약 검토 및 협상';
+    if (scenarioId.includes('chapter2')) return '에피소드 2: 업체 선정 과정';
+    if (scenarioId.includes('chapter3')) return '에피소드 3: 정보 보안 관리';
+    if (scenarioId.includes('chapter4')) return '에피소드 4: 선물 및 접대 정책';
+    if (scenarioId.includes('episode1')) return '에피소드 5: 직장 내 괴롭힘 대응';
+  // episode2 (에피소드 6) 삭제됨
+    return '';
+  };
+
+  // Calculate score for the just-finished episode
+  useEffect(() => {
+    if (isEpisodeEndScenario(currentScenario)) {
+      // Get episode name
+      const episodeName = getEpisodeNameFromScenario(currentScenario);
+      // Filter history for this episode
+      const episodeEntries = gameHistory.filter(entry => entry.episodeName === episodeName && entry.originalPoints !== 0);
+      const episodeScore = episodeEntries.reduce((sum, entry) => sum + entry.originalPoints, 0);
+      const episodeMaxScore = episodeEntries.length * 3;
+      const episodePercent = episodeMaxScore > 0 ? Math.round((episodeScore / episodeMaxScore) * 100) : 0;
+      setLastEpisodeScore({
+        episodeName,
+        episodeScore,
+        episodeMaxScore,
+        episodePercent,
+        questions: episodeEntries.length
+      });
+      setShowEpisodeScore(true);
+    } else {
+      setShowEpisodeScore(false);
+    }
+  }, [currentScenario, gameHistory]);
+  // Show episode score summary if episode just ended
+  if (showEpisodeScore && lastEpisodeScore) {
+    return (
+      <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 backdrop-blur-sm">
+        <Card className="w-full max-w-xl mx-4 bg-white/95 backdrop-blur-md shadow-2xl border-0">
+          <CardHeader className="text-center">
+            <CardTitle className="text-2xl font-bold text-gray-800">{lastEpisodeScore.episodeName} 종료</CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-6">
+            <div className="text-center">
+              <div className="text-5xl font-bold mb-2 text-blue-600">
+                {lastEpisodeScore.episodePercent}%
+              </div>
+              <div className="text-xl font-semibold mb-4 text-gray-700">
+                취득 점수: {lastEpisodeScore.episodeScore} / {lastEpisodeScore.episodeMaxScore}
+              </div>
+              <div className="text-sm text-gray-600 mb-2">
+                해결한 문제: {lastEpisodeScore.questions}개
+              </div>
+              <div className="text-xs text-blue-500 mt-2">
+                ※ 재도전한 문제의 경우 더 높은 점수만 반영됩니다.
+              </div>
+            </div>
+            <div className="flex justify-center gap-4 mt-6">
+              <Button onClick={() => setCurrentScenario('final_score')}>최종 점수 보기</Button>
+              <Button variant="outline" onClick={() => setCurrentScenario('intro')}>메인 메뉴로</Button>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+    );
+  }
   const [currentScenario, setCurrentScenario] = useState('intro');
   const [totalPoints, setTotalPoints] = useState(0);
   const [gameHistory, setGameHistory] = useState([]);
@@ -25,8 +97,7 @@ const GameScreen = () => {
     if (scenarioId.includes('chapter3')) return '에피소드 3: 정보 보안 관리';
     if (scenarioId.includes('chapter4')) return '에피소드 4: 선물 및 접대 정책';
     if (scenarioId.includes('episode1')) return '에피소드 5: 직장 내 괴롭힘 대응';
-    if (scenarioId.includes('episode2')) return '에피소드 6: 담합 및 부정청탁 방지';
-    if (scenarioId.includes('episode3')) return '에피소드 7: 사이버 보안 및 피싱 대응';
+
     return '';
   };
 
